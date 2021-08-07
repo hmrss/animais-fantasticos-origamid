@@ -1,75 +1,12 @@
-function initTabNav() {
-  const tabmenu = document.querySelectorAll(".js-tabmenu li");
-  const tabcontent = document.querySelectorAll(".js-tabcontent section");
+// Adicione um atributo data-anime="show-down" data-anime="show-right" a todos as section's
+// com descricão dos animais.
 
-  function activeTab(index) {
-    tabcontent.forEach((content) => content.classList.remove("ativo"));
-    tabcontent[index].classList.add("ativo");
-  }
+// Utilizando estes atributos, adicione a classe
+// show-down ou show-right a sua respectiva section
+// assim que a mesma aparecer na tela (animacao tab)
 
-  tabmenu.forEach((li, i) => {
-    li.addEventListener("click", () => activeTab(i));
-  });
-}
+// No CSS faça com que show-down anime de cima para baixo
+// e show-right continue com a mesma animação da esquerda
+// para a direita
 
-function initAccordion() {
-  const accordionList = document.querySelectorAll(".js-accordion dt");
-
-  function activeAccordion() {
-    this.classList.toggle("ativo");
-    this.nextElementSibling.classList.toggle("ativo");
-  }
-
-  accordionList.forEach((item) => {
-    item.addEventListener("click", activeAccordion);
-  });
-}
-
-function initScrollSuave() {
-  const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
-
-  function scrollToSection(event) {
-    event.preventDefault();
-    const href = event.currentTarget.getAttribute("href");
-    const section = document.querySelector(href);
-    section.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-
-    //Forma alternativa
-    // const topSection = section.offsetTop;
-    // window.scrollTo({
-    //   top: section.offsetTop,
-    //   behavior: "smooth",
-    // });
-  }
-
-  linksInternos.forEach((link) => {
-    link.addEventListener("click", scrollToSection);
-  });
-}
-
-function initAnimacaoScroll() {
-  const sections = document.querySelectorAll(".js-scroll");
-  const halfView = window.innerHeight * 0.75;
-
-  function animaSroll() {
-    sections.forEach((section) => {
-      const { top } = section.getBoundingClientRect();
-      console.log(section.getBoundingClientRect());
-      const isSectionVisible = top - halfView < 0;
-
-      if (isSectionVisible) section.classList.add("ativo");
-    });
-  }
-
-  animaSroll();
-
-  window.addEventListener("scroll", animaSroll);
-}
-
-initTabNav();
-initAccordion();
-initScrollSuave();
-initAnimacaoScroll();
+// Substitua todas as classes js- por data atributes.
