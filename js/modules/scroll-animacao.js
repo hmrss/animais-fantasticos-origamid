@@ -7,7 +7,11 @@ export default function initAnimacaoScroll() {
       const { top } = section.getBoundingClientRect();
       const isSectionVisible = top - halfView < 0;
 
-      if (isSectionVisible) section.classList.add("ativo");
+      if (isSectionVisible) {
+        section.classList.add("ativo");
+      } else if (section.classList.contains("ativo")) {
+        section.classList.remove("ativo");
+      }
     });
   }
 
