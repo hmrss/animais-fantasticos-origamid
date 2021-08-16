@@ -302,3 +302,18 @@ body {
   transition: 0.3s;
   transform: translate3d(0, 0, 0);
 }
+
+[data-semana]::after {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e54;
+  margin-left: 4px;
+  border: 1px solid #000;
+}
+
+[data-semana].aberto::after {
+  background: #3f4;
+}
