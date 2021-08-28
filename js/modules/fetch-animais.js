@@ -11,7 +11,6 @@ export default function initFetchAnimais() {
       const divAnimal = createAnimal(animal);
       numerosGrid.appendChild(divAnimal);
     });
-    console.log("passou");
     initAnimaNumeros();
   }
 
