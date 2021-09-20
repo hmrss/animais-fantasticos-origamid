@@ -8,14 +8,14 @@ export default function initAnimacaoScroll() {
       const isSectionVisible = top - halfView < 0;
 
       if (isSectionVisible) {
-        section.classList.add("ativo");
-      } else if (section.classList.contains("ativo")) {
-        section.classList.remove("ativo");
+        section.classList.add('ativo');
+      } else if (section.classList.contains('ativo')) {
+        section.classList.remove('ativo');
       }
     });
   }
 
   animaSroll();
 
-  window.addEventListener("scroll", animaSroll);
+  window.addEventListener('scroll', animaSroll);
 }

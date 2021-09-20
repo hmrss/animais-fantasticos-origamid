@@ -9,26 +9,26 @@ export default function initModal() {
     '[data-modal="container"]',
   );
 
+  function addEvent(...elements) {
+    elements.forEach(({ element, event, funcCb }) => {
+      element.addEventListener(event, funcCb);
+    });
+  }
+
+  function toggleModal(event) {
+    event.preventDefault();
+    containerModal.classList.toggle('ativo');
+  }
+
+  function clickOut(event) {
+    if (event.target === this) toggleModal(event);
+  }
+
   if (botaoAbrir && botaoFechar && containerModal) {
-    function toggleModal(event) {
-      event.preventDefault();
-      containerModal.classList.toggle("ativo");
-    }
-
-    function clickOut(event) {
-      if (event.target === this) toggleModal(event);
-    }
-
-    function addEvent(...elements) {
-      elements.forEach(({ element, event, funcCb }) => {
-        element.addEventListener(event, funcCb);
-      });
-    }
-
     addEvent(
-      { element: botaoAbrir, event: "click", funcCb: toggleModal },
-      { element: botaoFechar, event: "click", funcCb: toggleModal },
-      { element: containerModal, event: "click", funcCb: clickOut },
+      { element: botaoAbrir, event: 'click', funcCb: toggleModal },
+      { element: botaoFechar, event: 'click', funcCb: toggleModal },
+      { element: containerModal, event: 'click', funcCb: clickOut },
     );
   }
 }

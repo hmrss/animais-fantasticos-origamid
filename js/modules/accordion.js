@@ -4,11 +4,11 @@ export default function initAccordion() {
   );
 
   function activeAccordion() {
-    this.classList.toggle("ativo");
-    this.nextElementSibling.classList.toggle("ativo");
+    this.classList.toggle('ativo');
+    this.nextElementSibling.classList.toggle('ativo');
   }
 
   accordionList.forEach((item) => {
-    item.addEventListener("click", activeAccordion);
+    item.addEventListener('click', activeAccordion);
   });
 }

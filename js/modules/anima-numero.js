@@ -1,5 +1,5 @@
 export default function initAnimaNumeros() {
-  const numeros = document.querySelectorAll("[data-numero]");
+  const numeros = document.querySelectorAll('[data-numero]');
 
   function animaNumeros() {
     numeros.forEach((numero) => {
@@ -19,12 +19,12 @@ export default function initAnimaNumeros() {
     });
   }
 
-  const observerTarget = document.querySelector(".numeros");
   const observer = new MutationObserver(handleMutation);
+  const observerTarget = document.querySelector('.numeros');
   observer.observe(observerTarget, { attributes: true });
 
   function handleMutation(mutation) {
-    if (mutation[0].target.classList.contains("ativo")) {
+    if (mutation[0].target.classList.contains('ativo')) {
       observer.disconnect();
       animaNumeros();
     }
