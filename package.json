@@ -1,9 +1,7 @@
 {
   "name": "animais-fantasticos-origamid",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.html",
-  "scripts": {    
+  "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack --mode development --watch"
   },
@@ -11,7 +9,6 @@
     "type": "git",
     "url": "git+https://github.com/hmrss/animais-fantasticos-origamid.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hmrss/animais-fantasticos-origamid/issues"
