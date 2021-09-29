@@ -22,9 +22,7 @@ const tabNav = new TabNav(
   "[data-tab='content'] section",
 );
 tabNav.init();
-
 /** comment */
-
 initModal();
 initToolTip();
 initDropdownMenu();
