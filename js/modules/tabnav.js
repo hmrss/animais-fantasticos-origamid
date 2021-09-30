@@ -31,5 +31,6 @@ export default class TabNav {
       this.activeTab(0); // ativa a primeira imagem
       this.addEvent();
     }
+    return this;
   }
 }
