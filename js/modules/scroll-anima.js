@@ -1,10 +1,12 @@
+import debounce from './debounce.js';
+
 export default class ScrollAnima {
   constructor(sections) {
     this.sections = document.querySelectorAll(sections);
     this.halfView = window.innerHeight * 0.75;
     this.distance = {};
 
-    this.checkDistance = this.checkDistance.bind(this);
+    this.checkDistance = debounce(this.checkDistance.bind(this), 200);
   }
 
   /** Armazena os topos das secoes em relacao ao topo da pagina */
