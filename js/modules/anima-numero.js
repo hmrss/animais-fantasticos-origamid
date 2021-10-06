@@ -7,7 +7,6 @@ export default class AnimaNumeros {
   }
   // Static pois não usa nenhum elemento da Class (ou seja, o this)
   static incrementarNumero(numero) {
-    console.log(numero);
     const total = +numero.innerText;
     const increment = Math.floor(total / 100);
     let start = 0;
