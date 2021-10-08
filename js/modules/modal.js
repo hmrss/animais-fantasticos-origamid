@@ -53,7 +53,7 @@ export default class Modal {
      * addModalEvents() {
      *   this.botaoAbrir.addEventListener('click', this.eventToggleModal);
      *   this.botaoFechar.addEventListener('click', this.eventToggleModal);
-     *   this.containerModal.addEventListener('click', this.cliqueForaModal);
+     *   this.containerModal.addEventListener('click', this.clickOut);
      * }
      */
   }
