@@ -16,7 +16,6 @@ export default class DropdownMenu {
   // Ativa o dropdownmenu e adiciona
   // a função que observa o clique fora dele
   activeDropdownMenu(event) {
-    console.log(event);
     event.preventDefault();
     const element = event.currentTarget;
     element.classList.add(this.activeClass);
