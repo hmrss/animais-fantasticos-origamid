@@ -11,7 +11,12 @@ export default class MenuMobile {
     this.openMenu = this.openMenu.bind(this);
   }
 
-  openMenu() {
+  openMenu(event) {
+    /*
+     * Necessario prevenir o padrao pois no mobile são chamado os dois eventos,
+     * tanto o de click quando o touchstart
+     * */
+    event.preventDefault();
     this.menuList.classList.add(this.activeClass);
     this.menuButton.classList.add(this.activeClass);
     outsideClick(this.menuList, this.events, () => {
